@@ -278,10 +278,17 @@ public String buildPattern(ModSock theSock)
                   + "Row 2 (WS): Slip 1, purl to first marker, slip wrap, slip wrapped stitch, slip next stitch (total of 3), purl all 3 together, turn \n"
                   + "Row 3 (RS): Slip 1, knit 1, slip 1, knit 1, repeating all the way across to 1 stitch before marker, ssk, turn (slip as if to knit)\n"
                   + "Row 4 (WS): Slip 1, purl to 1 stitch before marker, purl next two together, turn \n"
-                  + "Repeat fows 3 and 4 until all side stitches have been worked, end on a purl row.\n\n"
-                  + "Return to working in the round. \n"
+                  + "Repeat rows 3 and 4 until all RS side stitches have been worked, end on a knit row.\n"
+                  + "Here you will note that we haven't consumed the last two stitches on the WS (one stitch before the gap and one stitch after.\n"
+                  + "Don't worry about these.\n"
+                  + "We are stopping one row short so that we avoid that pesky gap at the intersection of the gusset and the foot tube. \n"
+                  + "Now we'll return to working in the round, knitting across Needle 2 (\"N2\") to finish the round. \n"
+                  + "When you get back around to the beggining of the sole stitches, you should see a stitch and a gap. Knit those two stitches together.\n"
+                  + "Knit across the rest of the round.\n\n"
+                  + "Return to working in the round, knitting straight until you have knitted as much leg as you want. \n"
                   + "\n"
-                  + "Switch to one size smaller needles for cuff" ;
+                  + "Switch to one size smaller needles for cuff. Knit the cuff in K1P1 ribbing. Bind off when you like the length of your cuff. \n"
+                  + "I really like the bind-off that Staci Perry teaches us on YouTube at: https://www.youtube.com/watch?v=SbzeEg6XMwM&feature=youtu.be \n" ;
     
         
     return thePattern;
