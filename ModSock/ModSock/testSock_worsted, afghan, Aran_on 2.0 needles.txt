@@ -1,0 +1,92 @@
+Instructions:
+
+Wrap & Turn: 
+    Knitwise:
+        slip next stitch purlwise onto right needle 
+        bring yarn to front 
+        put the slipped stitch back onto left needle 
+        turn 
+        bring yarn to front (because your new row will be a purl row) 
+        Place Marker 
+
+    Purlwise: 
+        slip next stitch purlwise onto right needle 
+        bring yarn to back 
+        put the slipped stitch back ontoleft needle 
+        turn 
+        bring yarn to back (because your new row will be a knit row) 
+        Place Marker 
+
+============================================= 
+
+
+How to work wrapped stitches:
+    Knit Row:
+        Pick up front bar of wrap as if to knit and place it on left needle
+        Slip wrap and wrapped stitch to right needle as if to knit
+        Insert left needle into front of two slipped stitches on right needle (as in an SSK)
+        Knit the two stitches together
+    Purl Row:
+        Pick up back bar of wrap and place iton left needle with the stitch it wrapped 
+        Purl both stitches together
+
+==============================================
+
+
+Backward Yarn Over (BYO) 
+    Bring the yarn over your right needle from BACK to FRONT 
+    knitting into the front of this stitch on the next row will create an invisible increase
+Yarn Over (YO) 
+    Bring the yarn over your right needle FRONT to BACK 
+    knitting into the back of this stitch on next row will create an invisible increase
+
+==============================================
+
+
+Toe: 
+Cast on 24 stitches using Judy's magic cast-on (that's 12 stitches per needle) 
+Row 1: Knit around; 
+Row 2 both needles: Knit 1, backwards yarn over (BYO), knit to second-to-last stitch, yarn over (YO). 
+                    You have increased the number of stitches on each needle by 2 
+Row 3 both needles: Knit 1, knit into the BYO you made in the previous row (it should knit twisted) 
+                    Knit to second-to-last stitch (the last YO you made in the previous row), knit into back of the YO (it should knit twisted);
+                    Knit last stitch 
+Repeat rows 2 and 3 until you have increased to 72 stitches. You should have added 48 stitches over 24 rows.
+End on a knit-across row (row 3). 
+
+knit straight for 2.25 inches (approx. 23 rows) 
+
+
+GUSSET:
+Now it's time to increase for the gusset of our sock. 
+Over the next 3.6 inches (approximately 36 rows), you will increase only on the sole needle (needle 1).
+Row 1 Needle 1: knit 1, PLACE MARKER, BYO, knit to second-to-last stitch, YO, PLACE MARKER, knit last stitch;
+Row 1 Needle 2: knit across; 
+Row 2 Needle 1: knit 1, knit into BYO you made in the previous row, 
+                knit across to second-to-last stitch (the YO you made in the previous row), knit into the back of the YO (it should knit twisted);
+Row 2 Needle 2: knit across; 
+Repeat rows 1 and 2 until you have added 36 stitches to Needle 1, for a total of 72 stitches on Needle 1.
+
+TURNING THE HEEL 
+For the next few rows, we will only be working on the sole needle (Needle 1), leaving Needle 2 unworked for now. 
+You should have placed markers inside the new gusset stitches on the two ends of Needle 1, leaving the original sole stitches in the center.
+Row 1 (right side - RS): Knit to 1 stitch before second marker, Wrap & Turn (W&T);
+Row 2: (wrong side - WS): Purl to 1 stitch before the first marker, W&T;
+Row 3: Knit to 2 stitches before the last wrap, W&T 
+Row 4: Purl to 2 stitches before the last wrap, W&T 
+Repeat rows 3 and 4 until you have 24 stitches remaining betweent the wraps closes to the center, ending with a PURL row
+Next two rows:
+    Row 1: Knit across the sole stitches, working each wrap together with the stitch it wraps, W&T.
+    Row 2: Purl across the sole stitches, purling the stitches you just knit together and working each wrap together with the stitch it wraps, W&T. 
+You have just completed turning the heel!!
+
+HEEL FLAP
+Row 1 (RS): Knit to second marker, slip wrap, slip wrapped stitch, slip next stitch (total of 3), knit all 3 together, turn 
+Row 2 (WS): Slip 1, purl to first marker, slip wrap, slip wrapped stitch, slip next stitch (total of 3), purl all 3 together, turn 
+Row 3 (RS): Slip 1, knit 1, slip 1, knit 1, repeating all the way across to 1 stitch before marker, ssk, turn (slip as if to knit)
+Row 4 (WS): Slip 1, purl to 1 stitch before marker, purl next two together, turn 
+Repeat fows 3 and 4 until all side stitches have been worked, end on a purl row.
+
+Return to working in the round. 
+
+Switch to one size smaller needles for cuff

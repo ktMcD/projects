@@ -1,0 +1,43 @@
+PatternDoc thePattern = new PatternDoc();
+            String patternString = buildPattern(newSock);
+            thePattern.setThePattern(patternString);
+            thePattern.writePattern(strSockName + "_" + newSock.getYarnWeight() + "_on " + newSock.getNeedles() + " needles");
+
+
+                                        "Instructions:" + "\n\n"
+                                            + "Wrap & Turn: \n"
+                                            + "    Knitwise:" + "\n"
+                                            + "        slip next stitch purlwise onto right needle \n"
+                                            + "        bring yarn to front \n"
+                                            + "        put the slipped stitch back onto left needle \n"
+                                            + "        turn \n"
+                                            + "        bring yarn to front (because your new row will be a purl row) \n"
+                                            + "        Place Marker \n\n"
+                                            + "    Purlwise: \n"
+                                            + "        slip next stitch purlwise onto right needle \n"
+                                            + "        bring yarn to back \n"
+                                            + "        put the slipped stitch back ontoleft needle \n"
+                                            + "        turn \n"
+                                            + "        bring yarn to back (because your new row will be a knit row) \n"
+                                            + "        Place Marker \n\n"
+                                            + "============================================= \n"
+                                            + "\n\n"
+                                            + "How to work wrapped stitches:\n"
+                                            + "    Knit Row:\n"
+                                            + "        Pick up front bar of wrap as if to knit and place it on left needle\n"
+                                            + "        Slip wrap and wrapped stitch to right needle as if to knit\n"
+                                            + "        Insert left needle into front of two slipped stitches on right needle (as in an SSK)\n"
+                                            + "        Knit the two stitches together\n"
+                                            + "    Purl Row:\n"
+                                            + "        Pick up back bar of wrap and place iton left needle with the stitch it wrapped \n"
+                                            + "        Purl both stitches together\n\n"
+                                            + "==============================================\n"
+                                            + "\n\n"
+                                            + "Backward Yarn Over (BYO) \n"
+                                            + "    Bring the yarn over your right needle from BACK to FRONT \n"
+                                            + "    knitting into the front of this stitch on the next row will create an invisible increase"
+                                            + "Yarn Over (YO) \n"
+                                            + "    Yarn Over your right needle FRONT to BACK \n"
+                                            + "    knitting into the back of this stitch on next row will create an invisible increase\n\n"
+                                            + "==============================================\n"
+                                            + "\n\n");
