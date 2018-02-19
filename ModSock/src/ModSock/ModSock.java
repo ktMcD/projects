@@ -14,8 +14,12 @@ public class ModSock
     private int    iCastOn;
     private int    iToeIncreaseStitches;
     private int    iToeIncreaseRows;
-        private int    iKnitStraightRows     = 0; // calculated
+    private double dToeLength            = 0; // calculated
+    private int    iKnitStraightRows     = 0; // calculated
     private double dKnitStraightLength   = 0; // calculated
+    private double dHeelLength           = 0; // calculated
+    private double dHeelTurnLength       = 0;
+    private double dGussetLength         = 0; // calculated
     private int    iGussetIncrStitches   = 0;
     private int    iGussetIncrRows       = 0;
     private int    iSoleStitches         = 0;
@@ -34,13 +38,18 @@ public class ModSock
                           + "Cast-on: " + this.iCastOn + "\n"
                           + "Toe Increase Stitches: " + this.iToeIncreaseStitches + "\n"
                           +" Toe Increase Rows: " + this.iToeIncreaseRows  + "\n"
+                          + "Toe length: " + this.dToeLength + "\n"
                           + "Total Stitches: " + this.iMaxStitches + "\n"
                           + "Sole Stitches: " + this.iSoleStitches + "\n"
                           + "Knit straight length: " + this.dKnitStraightLength + "\n"
                           + "Knit straight rows: " + this.iKnitStraightRows + "\n"
                           + "Gusset Increase Stitches: " + this.iGussetIncrStitches + "\n"
                           + "Gusset Increase Rows: " + this.iGussetIncrRows + "\n"
-                          + "Knit straight formula: sock Length - x (2/3 of entire sock length)";
+                          + "Gusset Length: " + this.dGussetLength + "\n"
+                          + "Heel length: " + this.dHeelLength + "\n"
+                          + "Heel Turn Length: " + this.dHeelTurnLength + "\n"
+                          + "Knit straight formula: sock Length - (toe length + heel turn length + gusset length)" + "\n"
+                          + "    " + this.dSockLength  + " - (" + this.dToeLength + "  + " + this.dHeelTurnLength + " + " + this.dGussetLength + ")";
                           
         return strOutputString;
     }
@@ -55,6 +64,10 @@ public class ModSock
         this.strSockName = sockName;
         this.dNeedles    = needles;
         this.strYarnWeight = strYarn;
+
+
+        this.dHeelLength     = this.dSockCirc / 2;
+        this.dHeelTurnLength = this.dHeelLength / 2;
 
         // calculates max stitches for entire sock
         double M = 0;
@@ -100,14 +113,16 @@ public class ModSock
         // get toe length
         this.iToeIncreaseStitches = this.iMaxStitches - this.iCastOn;
         this.iToeIncreaseRows = this.iToeIncreaseStitches / 2;
+        this.dToeLength = this.iToeIncreaseRows / this.dGaugeRPI;
         
         //get sole stitches
         //get gusset increase stitches
         this.iSoleStitches = this.iMaxStitches / 2;
-        this.iGussetIncrRows = iSoleStitches - 2;
-        this.iGussetIncrStitches = this.iSoleStitches - 2;
+        this.iGussetIncrRows = iSoleStitches;
+        this.dGussetLength = this.iGussetIncrRows / this.dGaugeRPI;
+        this.iGussetIncrStitches = this.iSoleStitches;
         
-        this.dKnitStraightLength = this.dSockLength * (2/3);
+        this.dKnitStraightLength = this.dSockLength - (this.dToeLength + this.dHeelTurnLength + this.dGussetLength);
         double dKnitStraightRows = this.dKnitStraightLength * this.dGaugeRPI;
         if (dKnitStraightRows % 1 != 0)
             dKnitStraightRows = ceil(dKnitStraightRows);
@@ -140,6 +155,11 @@ public class ModSock
         return this.iKnitStraightRows;
     }
     
+    public double getToeLength()
+    {
+        return this.dToeLength;
+    }
+    
     public int getCastOn()
     {        
         return this.iCastOn;
@@ -153,6 +173,11 @@ public class ModSock
     public int getGussetStitches()
     {
         return this.iGussetIncrStitches;
+    }
+    
+    public double getGussetLength()
+    {
+        return this.dGussetLength;
     }
     
     public int getToeIncreaseStitches()
