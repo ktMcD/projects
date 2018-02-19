@@ -251,7 +251,8 @@ public String buildPattern(ModSock theSock)
                   + "    You should have added " + theSock.getToeIncreaseStitches() + " stitches (" + (theSock.getToeIncreaseStitches() / 2) + " stitches each end).\n"
                   + "over " + theSock.getToeIncreaseRows() + " rows. End on a row-3 row. \n\n"
                   + "Knit straight until your sock measures " + theSock.getKnitStraighLength() + " inches from the toe \n"
-                  + "    (approx. " + theSock.getKnitStraightRows() + " rows from the toe ) (about 2/3 of your total sock length)"
+                  + "    (approx. " + theSock.getKnitStraightRows() + " rows from the toe based on the rows per inch you entered as gauge)\n"
+                  + "    (about 2/3 of your total sock length)"
                   + "\n\n"
                   + "GUSSET:\n"
                   + "Now it's time to increase for the gusset of our sock. \n"
@@ -270,7 +271,8 @@ public String buildPattern(ModSock theSock)
                   + "\n\n"
                   + "TURNING THE HEEL \n"
                   + "For the next few rows, we will only be working back and forth on the sole needle (N1), leaving the instep needle (N2) unworked for now. \n"
-                  + "You should have placed markers inside the new gusset stitches on the two ends of Needle 1, leaving the original sole stitches in the center.\n"
+                  + "You should have placed markers inside the new gusset stitches on the two ends of N1, leaving the original sole stitches in the center.\n"
+                  + "    This will help you keep track of when you've consumed the heel stitches vs. consuming gusset stitches \n"
                   + "Row 1 (right side - RS): Knit to 1 stitch before second marker, Wrap & Turn (W&T);\n"
                   + "Row 2: (wrong side - WS): Purl to 1 stitch before the first marker, W&T;\n"
                   + "Row 3: Knit to 2 stitches before the last wrap, W&T \n"
@@ -649,8 +651,8 @@ public String buildPattern(ModSock theSock)
         if(lSCircEaseNotNull && lSCircEaseVal)
         {
             dSockCircEase = Double.parseDouble(circEaseTextField.getText());
-            dSockLength = dFootLength - dSockLengthEase;
-            dSockCirc   = dFootCirc - dSockCircEase;
+            dSockLength = dFootLength - (dFootLength * dSockLengthEase);
+            dSockCirc   = dFootCirc - (dFootCirc * dSockCircEase);
             sockLengthLabel.setText("Sock Length: " + dSockLength);
             sockCircLabel.setText("Sock Width: " + dSockCirc);
         }

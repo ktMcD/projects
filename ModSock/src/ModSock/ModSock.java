@@ -109,8 +109,8 @@ public class ModSock
         this.iGussetIncrRows = iSoleStitches;
                 this.iGussetIncrStitches = this.iSoleStitches - 2;
         
-        this.dKnitStraightLength = this.dSockLength * (2/3);
-        double dKnitStraightRows = this.iToeIncreaseRows + (this.dGaugeRPI * this.dKnitStraightLength);
+        this.dKnitStraightLength = this.dSockLength * (0.6666666666666667);
+        double dKnitStraightRows = this.dKnitStraightLength * dGaugeRPI;
         if (dKnitStraightRows % 1 != 0)
             dKnitStraightRows = ceil(dKnitStraightRows);
         this.iKnitStraightRows = (int) dKnitStraightRows;
