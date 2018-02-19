@@ -367,7 +367,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="writePatternButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Write Pattern"/>
+        <Property name="text" type="java.lang.String" value="Make Sock!"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="writePatternButtonActionPerformed"/>

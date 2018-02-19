@@ -14,12 +14,8 @@ public class ModSock
     private int    iCastOn;
     private int    iToeIncreaseStitches;
     private int    iToeIncreaseRows;
-    private double dToeLength            = 0; // calculated
-    private int    iKnitStraightRows     = 0; // calculated
+        private int    iKnitStraightRows     = 0; // calculated
     private double dKnitStraightLength   = 0; // calculated
-    private double dHeelLength           = 0; // calculated
-    private double dHeelTurnLength       = 0;
-    private double dGussetLength         = 0; // calculated
     private int    iGussetIncrStitches   = 0;
     private int    iGussetIncrRows       = 0;
     private int    iSoleStitches         = 0;
@@ -38,18 +34,14 @@ public class ModSock
                           + "Cast-on: " + this.iCastOn + "\n"
                           + "Toe Increase Stitches: " + this.iToeIncreaseStitches + "\n"
                           +" Toe Increase Rows: " + this.iToeIncreaseRows  + "\n"
-                          + "Toe length: " + this.dToeLength + "\n"
                           + "Total Stitches: " + this.iMaxStitches + "\n"
                           + "Sole Stitches: " + this.iSoleStitches + "\n"
                           + "Knit straight length: " + this.dKnitStraightLength + "\n"
                           + "Knit straight rows: " + this.iKnitStraightRows + "\n"
                           + "Gusset Increase Stitches: " + this.iGussetIncrStitches + "\n"
                           + "Gusset Increase Rows: " + this.iGussetIncrRows + "\n"
-                          + "Gusset Length: " + this.dGussetLength + "\n"
-                          + "Heel length: " + this.dHeelLength + "\n"
-                          + "Heel Turn Length: " + this.dHeelTurnLength + "\n"
-                          + "Knit straight formula: sock Length - (toe length + heel turn length + gusset length)" + "\n"
-                          + "    " + this.dSockLength  + " - (" + this.dToeLength + "  + " + this.dHeelTurnLength + " + " + this.dGussetLength + ")";
+                          + "Knit straight formula: sock Length x (2/3)" + " = \n"
+                          + "    " + this.dSockLength  * 2/3 ;
                           
         return strOutputString;
     }
@@ -65,9 +57,6 @@ public class ModSock
         this.dNeedles    = needles;
         this.strYarnWeight = strYarn;
 
-
-        this.dHeelLength     = this.dSockCirc / 2;
-        this.dHeelTurnLength = this.dHeelLength / 2;
 
         // calculates max stitches for entire sock
         double M = 0;
@@ -113,17 +102,15 @@ public class ModSock
         // get toe length
         this.iToeIncreaseStitches = this.iMaxStitches - this.iCastOn;
         this.iToeIncreaseRows = this.iToeIncreaseStitches / 2;
-        this.dToeLength = this.iToeIncreaseRows / this.dGaugeRPI;
         
         //get sole stitches
         //get gusset increase stitches
         this.iSoleStitches = this.iMaxStitches / 2;
         this.iGussetIncrRows = iSoleStitches;
-        this.dGussetLength = this.iGussetIncrRows / this.dGaugeRPI;
-        this.iGussetIncrStitches = this.iSoleStitches;
+                this.iGussetIncrStitches = this.iSoleStitches - 2;
         
-        this.dKnitStraightLength = this.dSockLength - (this.dToeLength + this.dHeelTurnLength + this.dGussetLength);
-        double dKnitStraightRows = this.dKnitStraightLength * this.dGaugeRPI;
+        this.dKnitStraightLength = this.dSockLength * (2/3);
+        double dKnitStraightRows = this.iToeIncreaseRows + (this.dGaugeRPI * this.dKnitStraightLength);
         if (dKnitStraightRows % 1 != 0)
             dKnitStraightRows = ceil(dKnitStraightRows);
         this.iKnitStraightRows = (int) dKnitStraightRows;
@@ -155,11 +142,7 @@ public class ModSock
         return this.iKnitStraightRows;
     }
     
-    public double getToeLength()
-    {
-        return this.dToeLength;
-    }
-    
+
     public int getCastOn()
     {        
         return this.iCastOn;
@@ -173,11 +156,6 @@ public class ModSock
     public int getGussetStitches()
     {
         return this.iGussetIncrStitches;
-    }
-    
-    public double getGussetLength()
-    {
-        return this.dGussetLength;
     }
     
     public int getToeIncreaseStitches()
@@ -196,26 +174,18 @@ public class ModSock
     }
 
     
-// formula for figuring out how long to knit after toe before gusset inc's
-//               total sock length - (T + HT + GL) (inches)
+// formula for figuring out how long to knit from toe before gusset inc's
+//               total sock length  * 2/3
 // M  = totalStitches for sock circumference (stitches) (after toe-increase) 
 // R  = rows per inch
 // S  = 1/2 * M (stitches in the sole and nbr of rows to increase for gusset)
 // G  = 1/2 * S (stitches increased on each side of sole for gusset) (stitches)
-// W  = 1/2 * sock circumference (width of heel)
-// GL = S / R (inches) (Gusset Length)
-// HT = 1/2 * W (heel turn length - inches)
-// T = ((maxStitches - cast-on stitches) / 2) / rows per inch (toe length) (inches)
-//      for example 72 max stitches - cast-on (24) = 48 / 2 = 24 / 10 (rows / inch)
-//                                                            the toe is 2.4"    
     // calculate cast-on (1/3 of max stitches)
-    // calculate toe length and toe rows
+    // calculate toe rows
     // calculate sole stitches (1/2 iMaxStitches)
     // calculate number of rows needed to increase for gusset (1/2 iMaxStitches)
-    // calculate numbner of stitches to increase on each side of the sole for the gusset (1/4 iMaxStitches)
-    // calculate width of heel (1/2 circumferece)
-    // calculate heel turn length (1/2 heel width)
-    // calculate length to knit plain after toe increase and before gusset shaping
+    // calculate number of stitches to increase on each side of the sole for the gusset (1/4 iMaxStitches)
+    // calculate length to knit plain from toe to beginning of gusset shaping
     //   
 
   
